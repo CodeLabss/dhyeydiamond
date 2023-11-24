@@ -1,0 +1,404 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slide Navbar</title>
+     <link rel="stylesheet" type="text/css" href="slide navbar style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.main {
+    width: 350px;
+    height: 500px;
+    background: red;
+    overflow: hidden;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 20px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6d44b8;
+}
+
+.login {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+
+.login label {
+    color: #573b8a;
+    transform: scale(.6);
+}
+
+#chk:checked~.login {
+    transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+    transform: scale(1);
+}
+
+#chk:checked~.signup label {
+    transform: scale(.6);
+}
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="txt" placeholder="User name" required="">
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="pswd" placeholder="Password" required="">
+                <button>Login</button>
+            </form>
+        </div>
+        <input type="button" value="Login" class="btn btn-success" (click)="CheckUser()" [disabled]="loginForm.invalid">
+    </div>
+</body>
+
+</html> -->
+
+
+<!-- 1st -->
+ <!-- <form [formGroup]="loginForm">
+<div class="pt-5">
+    <h1 class="text-center">HTML Login Page with Bootstrap Example</h1>
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <div class="card card-body">
+
+                    <form id="submitForm" action="/login" method="post" data-parsley-validate=""
+                        data-parsley-errors-messages-disabled="true" novalidate="" _lpchecked="1"><input type="hidden"
+                            name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4" >
+                        <div class="form-group required" *ngIf="isAuthenticationFail">
+                            <label for="username">Username / Email</label>
+                            <input type="text" class="form-control text-lowercase" id="username" required=""
+                                name="username" value="">
+                        </div>
+                        <div class="form-group required">
+                            <label class="d-flex flex-row align-items-center" for="password">Password
+                                <a class="ml-auto border-link small-xl" href="/forget-password">Forget?</a></label>
+                            <input type="password" class="form-control" required="" id="password" name="password"
+                                value="">
+                        </div>
+                        <div class="form-group mt-4 mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me"
+                                    data-parsley-multiple="remember-me">
+                                <label class="custom-control-label" for="remember-me">Remember me?</label>
+                            </div>
+                        </div>
+                        <div class="form-group pt-1">
+                            <button class="btn btn-primary btn-block" type="submit" (click)="onLogin()"   >Log In</button>
+                        </div>
+                    </form>
+                    <p class="small-xl pt-3 text-center">
+                        <span class="text-muted">Not a member?</span>
+                        <a href="/signup">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>  -->
+
+<!-- 2nd -->
+    <!-- <form [formGroup]="loginForm">
+        <div class="card">
+            <h5 class="card-header">Login</h5>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="alert alert-danger" *ngIf="isAuthenticationFail">
+                        Invalid User Name or Password</div>
+                    <label for="">UserName</label>
+                    <input type="text" formControlName="UserName" id="" class="form-control"
+                        [ngClass]="{'is-valid':loginForm.controls.UserName.valid,'is-invalid':loginForm.controls.UserName.invalid}">
+                    <div class="alert alert-danger"
+                        [hidden]="!(loginForm.controls.UserName.dirty && loginForm.controls.UserName.errors)">
+                        Enter User Name</div>
+                    <br>
+    
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" formControlName="Password" id="" class="form-control"
+                        [ngClass]="{'is-valid':loginForm.controls.Password.valid,'is-invalid':loginForm.controls.Password.invalid}">
+                    <div class="alert alert-danger"
+                        [hidden]="!(loginForm.controls.Password.dirty && loginForm.controls.Password.errors)">
+                        Enter Password</div>
+    
+                </div>
+    
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="button" value="Login" class="btn btn-success" (click)="onLogin()"
+                    [disabled]="loginForm.invalid">
+            </div>
+        </div>
+    </form> -->
+
+<!-- 3rd -->
+    <!-- <form  [formGroup]="loginForm"> 
+  <section class="vh-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+    
+                            <h3 class="mb-5">Login</h3>
+    
+                            <div class="form-outline mb-4">
+                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                                <label class="form-label" for="typeEmailX-2">Email</label>
+                            </div>
+    
+                            <div class="form-outline mb-4">
+                                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                                <label class="form-label" for="typePasswordX-2">Password</label>
+                            </div>
+    
+                             Checkbox 
+                            <div class="form-check d-flex justify-content-start mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                                <label class="form-check-label" for="form1Example3"> Remember password </label>
+                            </div>
+    
+                                <input type="button" value="Login" class="btn btn-success" (click)="onLogin()" >
+                            <hr class="my-4">
+    
+                           
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+</form> -->
+
+<!-- 4th -->
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-outline mb-4">
+        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" formControlName="email" />
+        <label class="form-label" for="typeEmailX-2">Email</label>
+        <div *ngIf="submitted && loginForm.controls['email'].errors?.['required']" class="text-danger">
+            Email is required
+        </div>
+        <div *ngIf="submitted && loginForm.controls['email'].errors?.['email']" class="text-danger">
+            Please enter a valid email address
+        </div>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" formControlName="password" />
+        <label class="form-label" for="typePasswordX-2">Password</label>
+        <div *ngIf="submitted && loginForm.controls['password'].errors?.['required']" class="text-danger">
+            Password is required
+        </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="loginForm.invalid">Login</button>
+</form> -->
+
+<!-- 5 -->
+<!-- <section class="vh-100" style="background-color: #508bfc;">
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <h3 class="mb-5">Sign in</h3>
+                        <form [formGroup]="loginForm">
+                            <div class="form-outline mb-4">
+                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg"
+                                    formControlName="email" />
+                                <label class="form-label" for="typeEmailX-2">Email</label>
+                                <div *ngIf="submitted && loginForm.controls['email'].errors?.['required']"
+                                    class="text-danger">
+                                    Email is required
+                                </div>
+                                <div *ngIf="submitted && loginForm.controls['email'].errors?.['email']" class="text-danger">
+                                    Please enter a valid email address
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="password" id="typePasswordX-2" class="form-control form-control-lg"
+                                    formControlName="password" />
+                                <label class="form-label" for="typePasswordX-2">Password</label>
+                                <div *ngIf="submitted && loginForm.controls['password'].errors?.['required'] "
+                                    class="text-danger">
+                                    Password is required
+                                </div>
+                            </div>
+
+                           
+
+                            <button class="btn btn-primary btn-lg btn-block"
+                                 onclick="onSubmit()">Login</button>
+
+                            
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<!-- 6th final -->
+    <!-- <div class="container-fluid pt-5 align-items-center w-50 width">
+        <form [formGroup]="loginForm">
+            <div class="card">
+                <h5 class="card-header login">Login</h5>
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="alert alert-danger" *ngIf="isAuthenticationFail">
+                            Invalid User Name or Password</div>
+                        <label for="">UserName</label>
+                        <input type="text" formControlName="UserName" id="" class="form-control"
+                            [ngClass]="{'is-valid':loginForm.controls.UserName.valid,'is-invalid':loginForm.controls.UserName.invalid}">
+                        <div class="alert alert-danger"
+                            [hidden]="!(loginForm.controls.UserName.dirty && loginForm.controls.UserName.errors)">
+                            Enter User Name</div>
+                        <br>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" formControlName="Password" id="" class="form-control"
+                            [ngClass]="{'is-valid':loginForm.controls.Password.valid,'is-invalid':loginForm.controls.Password.invalid}">
+                        <div class="alert alert-danger"
+                            [hidden]="!(loginForm.controls.Password.dirty && loginForm.controls.Password.errors)">
+                            Enter Password</div>
+
+                    </div>
+
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="Login" class="btn btn-succes sticky-top login-btn" (click)="CheckUser()"
+                        [disabled]="loginForm.invalid">
+                </div>
+            </div>
+        </form>
+    </div> -->
+
+
+    <!-- 7th final -->
+    <div class="container-fluid pt-5 align-items-center w-50 width">
+        <form [formGroup]="loginForm">
+            <div class="card">
+                <h5 class="card-header login">Login</h5>
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="alert alert-danger" *ngIf="isAuthenticationFail">
+                            Invalid User Name or Password</div>
+                        <label for="">Email</label>
+                        <input type="text" formControlName="UserName" id="" class="form-control" 
+                            [ngClass]="{'is-valid':loginForm.controls.UserName.valid,'is-invalid':loginForm.controls.UserName.invalid}">
+                        <div class="alert alert-danger"
+                            [hidden]="!(loginForm.controls.UserName.dirty && loginForm.controls.UserName.errors)">
+                            Enter User Name</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="password" formControlName="Password" id="" class="form-control"
+                            [ngClass]="{'is-valid':loginForm.controls.Password.valid,'is-invalid':loginForm.controls.Password.invalid}">
+                        <div class="alert alert-danger"
+                            [hidden]="!(loginForm.controls.Password.dirty && loginForm.controls.Password.errors)">
+                            Enter Password</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" value="Login" class="btn btn-success login-btn" (click)="CheckUser()"
+                            [disabled]="loginForm.invalid">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
